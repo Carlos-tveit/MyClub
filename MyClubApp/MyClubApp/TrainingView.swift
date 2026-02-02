@@ -1,0 +1,89 @@
+//
+//  TrainingView.swift
+//  MyClubApp
+//
+//  Created by Carlos Diaz Tveit on 02/02/2026.
+//
+
+import SwiftUI
+
+struct TrainingView: View {
+    
+    @State var tall = 0
+    var navn = "Carlos"
+    
+    
+    var body: some View {
+        
+        ZStack {
+            Color(.systemGray)
+                .ignoresSafeArea()
+            
+            VStack(alignment: .leading, spacing: 20) {
+                
+                HStack() {
+                    
+                    Text("MyClub\n")
+                        .font(.title)
+                        .bold()
+                    
+                    VStack() {
+                        
+                        HStack() {
+                            Image(systemName: "figure.indoor.soccer")
+                            
+                            Image(systemName: "star.fill")
+                            Image(systemName: "star.fill")
+                            Image(systemName: "star.fill")
+                        }
+                        
+                        Text("Ha det gøy")
+                    }
+                    .foregroundStyle(.white)
+                    .font(.caption)
+                    
+                }
+                HStack() {
+                    Button {
+                        addNumber()
+                    } label: {
+                        Image(systemName: "figure.indoor.soccer")
+                    }
+                    
+                    Button("Knapp") {
+                        print("Trykket")
+                    }
+                    Image(systemName: "soccerball.inverse")
+                    Text(navn)
+                    Text(String(tall))
+                    Spacer()
+                    Text("Ha det gøy")
+                        .foregroundStyle(.gray)
+                        .font(.caption)
+                }
+                
+                
+                Text("Trening!")
+                
+            }
+            .padding()
+            .background() {
+                Rectangle()
+                    .foregroundStyle(.green)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .shadow(radius: 15)
+            }
+            .padding()
+        }
+    }
+    
+    func addNumber() {
+        tall = Int.random(in: 2...14)
+        tall += 1
+        print("Tøft")
+    }
+}
+
+#Preview {
+    TrainingView()
+}

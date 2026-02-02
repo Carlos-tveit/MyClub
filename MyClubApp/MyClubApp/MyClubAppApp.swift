@@ -13,5 +13,8 @@ struct MyClubAppApp: App {
         WindowGroup {
             ContentView()
         }
+        WindowGroup("Training") {
+            TrainingView()
+        }
     }
 }
