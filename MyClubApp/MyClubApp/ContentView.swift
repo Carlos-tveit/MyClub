@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  MyClubApp
 //
-//  Created by Carlos Diaz Tveit on 02/02/2026.
+//  Created by Carlos Diaz Tveit on 02/02/2026..
 //
 
 import SwiftUI
