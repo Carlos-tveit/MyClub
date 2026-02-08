@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  MyClubApp
-//
-//  Created by Carlos Diaz Tveit on 02/02/2026..
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -20,6 +13,23 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
                 VStack(alignment: .leading, spacing: 20) {
+                    
+                    Text("Pensjonistlaget")
+                        .font(.title)
+                    
+                    
+                    
+                    HStack() {
+                        Spacer()
+                        Text("Lagoversikt")
+                        Spacer()
+                        NavigationLink("Trening") {
+                            TeamView()
+                        }
+                        Spacer()
+                        Text("Kamper")
+                        Spacer()
+                    }
                     
                     HStack() {
                         
@@ -72,7 +82,7 @@ struct ContentView: View {
                 .padding()
                 .background() {
                     Rectangle()
-                        .foregroundStyle(.green)
+                        .foregroundStyle(Color(red: 67/255, green: 151/255, blue: 96/255))
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         .shadow(radius: 15)
                 }

@@ -1,10 +1,3 @@
-//
-//  TrainingView.swift
-//  MyClubApp
-//
-//  Created by Carlos Diaz Tveit on 02/02/2026.
-//
-
 import SwiftUI
 
 struct TrainingView: View {
@@ -14,69 +7,246 @@ struct TrainingView: View {
     
     
     var body: some View {
-        
-        ZStack {
+        NavigationStack {
+            ZStack {
             Color(.systemGray)
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading, spacing: 20) {
+            
+            
+            VStack() {
                 
+                // Klubnavn:
+                Text("Pensjonistlaget")
+                    .font(.title)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Text("\n")
+                
+                // Header
                 HStack() {
-                    
-                    Text("MyClub\n")
-                        .font(.title)
-                        .bold()
-                    
-                    VStack() {
-                        
-                        HStack() {
-                            Image(systemName: "figure.indoor.soccer")
-                            
-                            Image(systemName: "star.fill")
-                            Image(systemName: "star.fill")
-                            Image(systemName: "star.fill")
-                        }
-                        
-                        Text("Ha det gøy")
-                    }
-                    .foregroundStyle(.white)
-                    .font(.caption)
-                    
-                }
-                HStack() {
-                    Button {
-                        addNumber()
-                    } label: {
-                        Image(systemName: "figure.indoor.soccer")
-                    }
-                    
-                    Button("Knapp") {
-                        print("Trykket")
-                    }
-                    Image(systemName: "soccerball.inverse")
-                    Text(navn)
-                    Text(String(tall))
                     Spacer()
-                    Text("Ha det gøy")
-                        .foregroundStyle(.gray)
-                        .font(.caption)
+                    NavigationLink {
+                        TeamView()
+                    } label: {
+                        Text("Lagg")
+                            .font(.title)
+                            .bold()
+                            .foregroundStyle(.white)
+                    }
+                    Spacer()
+                    NavigationLink {
+                        TrainingView()
+                    } label: {
+                        Text("Trening")
+                            .font(.title)
+                            .bold()
+                            .foregroundStyle(.green)
+                    }
+                    Spacer()
+                    NavigationLink {
+                        MatchView()
+                    } label: {
+                        Text("Kamp")
+                            .font(.title)
+                            .bold()
+                            .foregroundStyle(.white)
+                    }
+                    Spacer()
                 }
                 
-                
-                Text("Trening!")
-                
+                // Scrollable area
+                ScrollView {
+                    VStack(spacing: 10) {
+                        VStack(alignment: .leading, spacing: 20) {
+                            
+                            
+                            Text("Tittel")
+                                .font(.title)
+                                .bold()
+                            
+                            HStack() {
+                                Text("Sted: ")
+                                    .bold()
+                                Spacer()
+                                Text("HVL Kunstgressbane")
+                            }
+                            HStack() {
+                                Text("Dato: ")
+                                    .bold()
+                                Spacer()
+                                Text("20.02.2024")
+                            }
+                            HStack() {
+                                Text("Tid: ")
+                                    .bold()
+                                Spacer()
+                                Text("19:00")
+                            }
+                            HStack() { // Her skal det være en poll
+                                Text("Kommer du? ")
+                                    .bold()
+                                Spacer()
+                                Text("Ja")
+                            }
+                            
+                            
+                            
+                        }
+                        .padding()
+                        .background {
+                            Rectangle()
+                                .foregroundStyle(.green)
+                                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                                .shadow(radius: 15)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        
+                        VStack(alignment: .leading, spacing: 20) {
+                            
+                            
+                            Text("Tittel")
+                                .font(.title)
+                                .bold()
+                            
+                            HStack() {
+                                Text("Sted: ")
+                                    .bold()
+                                Spacer()
+                                Text("HVL Kunstgressbane")
+                            }
+                            HStack() {
+                                Text("Dato: ")
+                                    .bold()
+                                Spacer()
+                                Text("20.02.2024")
+                            }
+                            HStack() {
+                                Text("Tid: ")
+                                    .bold()
+                                Spacer()
+                                Text("19:00")
+                            }
+                            HStack() { // Her skal det være en poll
+                                Text("Kommer du? ")
+                                    .bold()
+                                Spacer()
+                                Text("Ja")
+                            }
+                            
+                            
+                            
+                        }
+                        .padding()
+                        .background {
+                            Rectangle()
+                                .foregroundStyle(.green)
+                                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                                .shadow(radius: 15)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        
+                        VStack(alignment: .leading, spacing: 20) {
+                            
+                            
+                            Text("Tittel")
+                                .font(.title)
+                                .bold()
+                            
+                            HStack() {
+                                Text("Sted: ")
+                                    .bold()
+                                Spacer()
+                                Text("HVL Kunstgressbane")
+                            }
+                            HStack() {
+                                Text("Dato: ")
+                                    .bold()
+                                Spacer()
+                                Text("20.02.2024")
+                            }
+                            HStack() {
+                                Text("Tid: ")
+                                    .bold()
+                                Spacer()
+                                Text("19:00")
+                            }
+                            HStack() { // Her skal det være en poll
+                                Text("Kommer du? ")
+                                    .bold()
+                                Spacer()
+                                Text("Ja")
+                            }
+                            
+                            
+                            
+                        }
+                        .padding()
+                        .background {
+                            Rectangle()
+                                .foregroundStyle(.green)
+                                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                                .shadow(radius: 15)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        
+                        
+                        VStack(alignment: .leading, spacing: 20) {
+                            
+                            
+                            Text("Tittel")
+                                .font(.title)
+                                .bold()
+                            
+                            HStack() {
+                                Text("Sted: ")
+                                    .bold()
+                                Spacer()
+                                Text("HVL Kunstgressbane")
+                            }
+                            HStack() {
+                                Text("Dato: ")
+                                    .bold()
+                                Spacer()
+                                Text("20.02.2024")
+                            }
+                            HStack() {
+                                Text("Tid: ")
+                                    .bold()
+                                Spacer()
+                                Text("19:00")
+                            }
+                            HStack() { // Her skal det være en poll
+                                Text("Kommer du? ")
+                                    .bold()
+                                Spacer()
+                                Text("Ja")
+                            }
+                            
+                            
+                            
+                        }
+                        .padding()
+                        .background {
+                            Rectangle()
+                                .foregroundStyle(.green)
+                                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                                .shadow(radius: 15)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                    }
+                }
             }
-            .padding()
-            .background() {
-                Rectangle()
-                    .foregroundStyle(.green)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .shadow(radius: 15)
-            }
-            .padding()
+        }
         }
     }
-    
+        
     func addNumber() {
         tall = Int.random(in: 2...14)
         tall += 1
